@@ -30,7 +30,7 @@ client.on("message", (message) => {
 //Add Buff
 
 client.on("message", (message) => {
-  if(message.content.toLowerCase() == "!add $Buff $Layer $Time $Cost") {
+  if(message.content.toLowerCase() == "!add $buff $layer $time $cost") {
     message.channel.send("\nBuff **$Buff** added\n$Layer\n$Time\n$Cost");
   }
 });

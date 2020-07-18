@@ -25,19 +25,13 @@ client.on("message", (message) => {
   \n \n **Add Upcoming Buffs:** \
   \n !add buff layer time cost (if any)");
   }
-});
 
 //Add Buff
-
-client.on("message", (message) => {
   if(message.content.toLowerCase() == "!add $buff $layer $time $cost") {
     message.channel.send("\nBuff **$Buff** added\n$Layer\n$Time\n$Cost");
   }
-});
 
 //Mutual
-
-client.on("message", (message) => {
   if(message.content.toLowerCase() == "!zg") {
     message.channel.send("<:zg:733931791802564628>\
   " + "**Heart of Hakkar**\
@@ -45,11 +39,8 @@ client.on("message", (message) => {
   " + "\n**At:** $Time\
   " + "\n**By:** $Buffer\n");
   }
-});
 
 //Alliance
-
-client.on("message", (message) => {
   if(message.content.toLowerCase() == "!ony-a") {
     message.channel.send("<:ony:733931792297492490>\
   " + "**Alliance Onyxia Head**\
@@ -134,11 +125,8 @@ client.on("message", (message) => {
   " + "\n<:orgport:734106867160055843> $PORT-A\
   " + "\n<:zg:733931791802564628> $ZG");
   }
-});
 
 //Horde
-
-client.on("message", (message) => {
   if(message.content.toLowerCase() == "!ony-h") {
     message.channel.send("<:ony:733931792297492490>\
   " + "**Horde Onyxia Head**\

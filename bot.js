@@ -229,5 +229,6 @@ client.login(token);
 
 //Print to console on start
 client.once('ready', () => {
+	client.user.setPresence({ activity: { name: '!buffhelp' }, status: 'online' })
 	console.log('Watching for buff alerts!');
 });

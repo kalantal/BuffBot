@@ -3,8 +3,23 @@
 
 ### Commands
 ```
+#help
 !buffhelp
-!add $Buff $Layer $Time $Cost
+
+#See Upcoming Buffs
+!alliance-all, !horde-all
+!zg
+!ony-a, !ony-h
+!sf-a, !sf-h
+!nef-a, !nef-h
+!wcb, !wcb-a
+!summon-a, !summon-h
+!dmf-summon-a, !dmf-summon-h
+!port-a, !port-h
+!layer-a, !layer-h
+ 
+#Add Upcoming Buffs:
+!add $Buff $Layer $Time $Cost (if any)
 ```
 
 ### TO-DO

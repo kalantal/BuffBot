@@ -2,8 +2,9 @@
 //Kalantal
 //Herod
 
-//Basic configr**At:**ion
+//Basic Configration
 const Discord = require('discord.js');
+const { prefix, token } = require('./config.json');
 const client = new Discord.Client();
 
 //
@@ -117,7 +118,7 @@ client.on("message", (message) => {
 });
 
 //Log in and start
-client.login('');
+client.login(token);
 
 //Print to console on start
 client.once('ready', () => {

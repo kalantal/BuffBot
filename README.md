@@ -33,7 +33,7 @@ Variables that need to be linked & accepted by users (in this order) + (data val
 $buff
 $layer
 $time
-$Cost
+$cost
 ```
 
 ### Saved refrence

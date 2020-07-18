@@ -1,10 +1,13 @@
 # BuffBot
+## Herod's Discord Buff Management
+
+### Commands
 ```
 !BUFFHELP
 !ADD $Buff $Layer $Time $Cost
 ```
 
-//TO-DO
+### TO-DO
 
 ```
 Store data file
@@ -19,7 +22,7 @@ $time
 $Cost
 ```
 
-//Saved refrence
+### Saved refrence
 
 ```
 #H-buff-planning-and-questions - BUFF COORDINATION IN THIS CHANNEL. POST TIMES IN #H-buff-drop-time
@@ -44,7 +47,7 @@ $Cost
     !buff timers off - disables timeframe logic and allows all alerts via DM again based on opt-ins
 ```
 
-//Notes
+### Notes
 
 ```
 Get Emojis: \:emoji:

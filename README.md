@@ -3,8 +3,8 @@
 
 ### Commands
 ```
-!BUFFHELP
-!ADD $Buff $Layer $Time $Cost
+!buffhelp
+!add $Buff $Layer $Time $Cost
 ```
 
 ### TO-DO
@@ -13,7 +13,6 @@
 Store data file
 Clear at time of buff drop
 Announce at time of buff drop
-"Listening to: !BUFFHELP" Status
 Link Variables
 Variables that need to be linked & accepted by users (in this order) + (data validation):
 $buff

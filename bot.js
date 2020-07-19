@@ -6,10 +6,40 @@
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
 const client = new Discord.Client();
+const fs = require('fs');
+
+//Verify Temp Directory Exists
+fs.mkdir('./tmp/', { recursive: true }, (err) => {
+  if (err) throw err;
+});
+
+//Make Buff Log
+fs.writeFile('./tmp/buffs.json', '', function (err) {
+  if (err) throw err;
+  console.log('BuffBot Log Created!');
+});
+
+//Mentions
+function getUserFromMention(mention) {
+	if (!mention) return;
+
+	if (mention.startsWith('<@') && mention.endsWith('>')) {
+		mention = mention.slice(2, -1);
+
+		if (mention.startsWith('!')) {
+			mention = mention.slice(1);
+		}
+
+		return client.users.cache.get(mention);
+	}
+}
 
 //Command List/Help
-
 client.on("message", (message) => {
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+
   if(message.content.toLowerCase() == "!buffhelp") {
     message.channel.send("\n **See Upcoming Buffs:**\
   \n <:dmt:733931789243908136> !alliance-all, !horde-all\
@@ -28,7 +58,7 @@ client.on("message", (message) => {
 
 //Add Buff
   if(message.content.toLowerCase() == "!add $buff $layer $time $cost") {
-    message.channel.send("\nBuff **$Buff** added\n$Layer\n$Time\n$Cost");
+    message.channel.send(`\nBuff **$Buff** added\n$Layer\n$Time\n$Cost\nBy: ${message.author}`);
   }
 
 //Mutual
@@ -210,6 +240,42 @@ client.on("message", (message) => {
   " + "\n<:orgport:734106867160055843> $PORT-H\
   " + "\n<:zg:733931791802564628> $ZG");
   }
+
+//message.channel.send({embed: {
+//  color: 3447003,
+//  description: "A very simple Embed!"
+//}});
+
+//message.channel.send({embed: {
+//    color: 3447003,
+//    author: {
+//      name: client.user.username,
+//      icon_url: client.user.avatarURL
+//    },
+//    title: "This is an embed",
+//    url: "http://google.com",
+//    description: "This is a test embed to showcase what they look like and what they can do.",
+//    fields: [{
+//        name: "Fields",
+//        value: "They can have different fields with small headlines."
+//      },
+//      {
+//        name: "Masked links",
+//        value: "You can put [masked links](http://google.com) inside of rich embeds."
+//      },
+//      {
+//        name: "Markdown",
+//        value: "You can put all the *usual* **__Markdown__** inside of them."
+//      }
+//    ],
+//    timestamp: new Date(),
+//    footer: {
+//      icon_url: client.user.avatarURL,
+//      text: "© Example"
+//    }
+//  }
+//});
+
 });
 
 //Log in and start

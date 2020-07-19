@@ -19,21 +19,6 @@ fs.writeFile('./tmp/buffs.json', '', function (err) {
   console.log('BuffBot Log Created!');
 });
 
-//Mentions
-function getUserFromMention(mention) {
-	if (!mention) return;
-
-	if (mention.startsWith('<@') && mention.endsWith('>')) {
-		mention = mention.slice(2, -1);
-
-		if (mention.startsWith('!')) {
-			mention = mention.slice(1);
-		}
-
-		return client.users.cache.get(mention);
-	}
-}
-
 //Command List/Help
 client.on("message", (message) => {
   if (!message.content.startsWith(prefix) || message.author.bot) return;

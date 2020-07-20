@@ -8,16 +8,7 @@ const { prefix, token } = require('./config.json');
 const client = new Discord.Client();
 const fs = require('fs');
 
-//Verify Temp Directory Exists
-fs.mkdir('./tmp/', { recursive: true }, (err) => {
-  if (err) throw err;
-});
-
-//Make Buff Log
-fs.writeFile('./tmp/buffs.json', '', function (err) {
-  if (err) throw err;
-  console.log('BuffBot Log Created!');
-});
+client.msgs = require ("./tmp/buffs.json")
 
 //Command List/Help
 client.on("message", (message) => {
@@ -42,9 +33,9 @@ client.on("message", (message) => {
   }
 
 //Add Buff
-  if(message.content.toLowerCase() == "!add $buff $layer $time $cost") {
-    message.channel.send(`\nBuff **$Buff** added\n$Layer\n$Time\n$Cost\nBy: ${message.author}`);
-  }
+//  if(message.content.toLowerCase() == "!add $buff $layer $time $cost") {
+//    message.channel.send(`\nBuff **$Buff** added\n$Layer\n$Time\n$Cost\nBy: ${message.author}`);
+//  }
 
 //Mutual
   if(message.content.toLowerCase() == "!zg") {
@@ -225,6 +216,27 @@ client.on("message", (message) => {
   " + "\n<:orgport:734106867160055843> $PORT-H\
   " + "\n<:zg:733931791802564628> $ZG");
   }
+
+if (message.content.startsWith ("!add")) {
+	editedmessage = message.content.slice (5);
+	client.msgs ["buff alert"] = {
+		buff : editedmessage,
+		layer : editedmessage,
+		time : editedmessage,
+		cost : editedmessage,
+		by : "@" + message.author.username
+	}
+	fs.writeFile ("./tmp/buffs.json", JSON.stringify (client.msgs, null, 4), err => {
+		if (err) throw err;
+		message.channel.send(`\nBuff **$Buff** added\n$Layer\n$Time\n$Cost\nBy: ${message.author}`);
+	});
+}
+
+if (message.content.startsWith ("!get")) {
+		let _message = client.msgs[message.author.username].message;
+		message.channel.send ("Buff @ : " + _message);
+	}
+
 });
 
 //Log in and start

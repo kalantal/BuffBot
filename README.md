@@ -3,7 +3,7 @@
 
 ### Commands
 ```
-#help
+#Help
 !buffhelp
 
 #See Upcoming Buffs

@@ -238,6 +238,7 @@ if (message.content.startsWith ("!get")) {
 		message.channel.send ("Buff @ : " + _message);
 	}
 
+//End Main
 });
 
 //Log in and start

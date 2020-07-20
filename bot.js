@@ -8,7 +8,7 @@ const { prefix, token } = require('./config.json');
 const client = new Discord.Client();
 const fs = require('fs');
 
-client.msgs = require ("./tmp/buffs.json")
+client.msgs = require ("./persistance/buffs.json")
 
 //Command List/Help
 client.on("message", (message) => {
@@ -226,7 +226,7 @@ if (message.content.startsWith ("!add")) {
 		cost : editedmessage,
 		by : "@" + message.author.username
 	}
-	fs.writeFile ("./tmp/buffs.json", JSON.stringify (client.msgs, null, 4), err => {
+	fs.writeFile ("./persistance/buffs.json", JSON.stringify (client.msgs, null, 4), err => {
 		if (err) throw err;
 		message.channel.send(`\nBuff **$Buff** added\n$Layer\n$Time\n$Cost\nBy: ${message.author}`);
 	});

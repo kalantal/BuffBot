@@ -5,6 +5,9 @@
 	"main": "bot.js",
 	"author": "Kalantal",
 	"dependencies": {
-		"discord.js": "^12.2.0"
+		"discord.js": "^12.2.0",
+		"jsoning": "^0.7.14",
+		"sequelize": "^6.3.3",
+		"sqlite3": "^5.0.0"
 	}
 }

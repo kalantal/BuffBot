@@ -224,9 +224,10 @@ if (message.content.startsWith ("!add")) {
 		layer : editedmessage,
 		time : editedmessage,
 		cost : editedmessage,
+		date : (new Date()).toLocaleDateString(),
 		by : "@" + message.author.username
 	}
-	fs.writeFile ("./persistance/buffs.json", JSON.stringify (client.msgs, null, 4), err => {
+	fs.appendFile ("./persistance/buffs.json", JSON.stringify (client.msgs, null, 4), err => {
 		if (err) throw err;
 		message.channel.send(`\nBuff **$Buff** added\n$Layer\n$Time\n$Cost\nBy: ${message.author}`);
 		console.log('Buff Added!');

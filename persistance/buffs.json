@@ -1,23 +1,10 @@
-{
-    "Kalamari": {
-        "buff": "ony layer 2 2:00",
-        "layer": "ony layer 2 2:00",
-        "time": "ony layer 2 2:00",
-        "cost": "ony layer 2 2:00",
-        "by": "Kalamari"
-    },
-    "new buff": {
-        "buff": "nef layer 1 3:00",
-        "layer": "nef layer 1 3:00",
-        "time": "nef layer 1 3:00",
-        "cost": "nef layer 1 3:00",
-        "by": "Kalamari"
-    },
+{}{
     "buff alert": {
-        "buff": "nef layer 1 3:00",
-        "layer": "nef layer 1 3:00",
-        "time": "nef layer 1 3:00",
-        "cost": "nef layer 1 3:00",
+        "buff": "ony-a layer 2, 2pm",
+        "layer": "ony-a layer 2, 2pm",
+        "time": "ony-a layer 2, 2pm",
+        "cost": "ony-a layer 2, 2pm",
+        "date": "7/19/2020",
         "by": "@Kalamari"
     }
 }

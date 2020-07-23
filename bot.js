@@ -7,8 +7,20 @@ const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
 const client = new Discord.Client();
 const fs = require('fs');
-
 client.msgs = require ("./persistance/buffs.json")
+
+//👍
+
+client.on('messageReactionAdd', (reaction, user) => {
+        let message = reaction.message, emoji = reaction.emoji;
+        if (reaction.emoji.name == '👍' && user.id === message.author.id) {
+			message.channel.send(`${reaction.message.author}` + " Subscribed for DMT alerts.");
+			message.channel.send("<:dmt:733931789243908136>")
+        }
+});
+
+fs.writeFile("./persistance/buffs.json", JSON.stringify({}, null, 4), function(err){
+});
 
 //Command List/Help
 client.on("message", (message) => {
